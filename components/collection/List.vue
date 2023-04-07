@@ -49,25 +49,25 @@
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
-              <tr >
+              <tr v-for="(application,index) in applicationData" :key="index">
                 <td
                   class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
                 >
-                  {{ 1412 }}
+                  {{ application.candidate_id }}
                 </td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ 14 }}
+                  {{ appliction.job_posting_id }}
                 </td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ 75 }}
+                  {{ application.status }}
                 </td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {{ 5467 }}
+                  {{ application.resume_url }}
                 </td>
                 <td
                   class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
                 >
-                  {{ 1412 }}
+                  {{ application.cover_letter }}
                 </td>
               </tr>
             </tbody>
@@ -77,9 +77,22 @@
     </div>
   </div>
     
-    <CollectionEdit />
+    
 </template>
 
-<script setup>
+<script setup lang="ts">
+import {ref,defineProps} from "vue"
+    const job_posting_id = ref("");
+    const candidate_id = ref("");
+    const status = ref("");
+    const resume_url = ref("");
+    const cover_letter = ref("");
+
+  const props = defineProps({
+  applicationData: Object,
+}) 
     
-  </script>
+    
+   
+
+</script>

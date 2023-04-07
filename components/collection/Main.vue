@@ -14,18 +14,26 @@
       </button>
     </div>
     <div class="m-3" v-if="!showNodal">
-      <CollectionList />
+        <CollectionList  :applicationData="applicationData"/>
     </div>
   </div>
   
 </template>
 
 <script setup>
-  import {ref} from 'vue'
+  import {ref } from 'vue'
   
   const showNodal = ref(false);
+
   
   const showCreateModal = () => {
     showNodal.value = true;
   };
+
+const getData = await useAuthLazyFetch("https://v7-stark-db-orm.mercury.infinity-api.net/api/applications/",);
+
+console.log("*****jhju",getData)
+ const applicationData = getData.data._rawValue
+ console.log("applicationData----?",applicationData)
+
 </script>

@@ -39,7 +39,6 @@
       placeholder="Status"
       v-model="status"
       type="text"
-      
       id="small-input"
       class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     />
@@ -77,7 +76,7 @@
   <div class="mt-5">
       
     <button @click="save" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
-    <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Cancel</button>
+    <button @click="close(false)" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Cancel</button>
 
     </div>
   </div>    
@@ -91,8 +90,32 @@ const status = ref("");
 const resume_url = ref("");
 const cover_letter_url = ref("");
 
-const save = () =>{
-  
-}
+// const emit = defineEmits(["save", "hide"]);
+//   const url = "https://v7-stark-db-orm.mercury.infinity-api.net/api/applications/";
+//   // Close modal
+//   const closeModal = (close) => {
+//     emit("hide", close);
+//   };
+//   // Save task
+//   //const saveTask = async (close) => {
+//   const save = async (close) => {
+//     //console.log("--*****", job_posting_id.value, candidate_id.value, status.value, resume_url.value);
+    
+//     emit("hide", close);
+//     //emit("Addtask", form);
+//     const { data } = await useAuthLazyFetchPost(`${url}`, {
+//       body: {
+//         candidate_id: candidate_id.value ? candidate_id.value : "",
+//         job_posting_id: job_id.value ? job_id.value : "",
+//         status: status.value ? status.value : "",
+//         resume_url: resume_url.value ? resume_url.value : "",
+//         cover_letter: cover_letter_url.value ? cover_letter_url.value : "",
+//         track_info: [],
+//         questionnaire: [],
+//       },
+//     },
+//     )};
+
+        
 
 </script>
